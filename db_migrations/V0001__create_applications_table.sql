@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS applications (
+  id SERIAL PRIMARY KEY,
+  full_name VARCHAR(255) NOT NULL,
+  age INTEGER NOT NULL,
+  has_bank_card BOOLEAN NOT NULL,
+  telegram_username VARCHAR(255) NOT NULL,
+  job_position VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

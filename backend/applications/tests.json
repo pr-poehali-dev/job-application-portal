@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Submit application",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Иван Петров",
+        "age": 25,
+        "has_bank_card": true,
+        "telegram_username": "@ivanov",
+        "job_position": "text_resale"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get applications without password",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {
+        "error": "Unauthorized"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
